@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import SingleApartment from './pages/SingleApartment';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Switch>
           <Route path="/apartments"><Apartments></Apartments></Route>    
         </Switch>  
+        <Switch>
+          <Route path="/myapartments"><SingleApartment></SingleApartment></Route>    
+        </Switch> 
         <Switch>
           <Route path="/contact"><Contact></Contact></Route>    
         </Switch>  
