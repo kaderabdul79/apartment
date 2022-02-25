@@ -2,17 +2,13 @@ import React from 'react';
 import './ApartmentsCard.css';
 import room1 from './ApartmentImage/room1.jpg';
 import room3 from './ApartmentImage/room3.jpg';
-
-import topBanner from './ApartmentImage/breadcrumb.webp';
+import TopBanner from '../TopBanner/TopBanner';
 
 const ApartmentsCard = () => {
     return (
         <div className='apartmentsCard'>
             {/* top banner area */}
-            <div className="banner-area">
-                <div className="banner-title"><h2>Apartments</h2></div>
-                <img src={topBanner} alt="" />
-            </div>
+            <TopBanner title="Apartments"></TopBanner>
             {/* top banner end */}
 
             {/* all rooms grid */}
@@ -53,6 +49,7 @@ const ApartmentsCard = () => {
                     </div>
                 </div>
                 {/* single-apartment end */}
+
             </div>
             {/* all rooms grid end */}
         </div>
