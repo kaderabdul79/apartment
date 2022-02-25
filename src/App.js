@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Apartments from './pages/Apartments';
+import Contact from './pages/Contact';
 import Homepage from './pages/Homepage';
 
 function App() {
@@ -14,6 +15,9 @@ function App() {
         </Switch>  
         <Switch>
           <Route path="/apartments"><Apartments></Apartments></Route>    
+        </Switch>  
+        <Switch>
+          <Route path="/contact"><Contact></Contact></Route>    
         </Switch>  
       </BrowserRouter>  
       

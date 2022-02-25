@@ -12,11 +12,11 @@ const Header = () => {
                 <div className="logo">Apartment</div>
                 <div className="navbar">
                     <ul>
-                        <li><Link to="">Home</Link></li>
-                        <li><Link to="">Apartments</Link></li>
-                        <li><Link to="">Contact</Link></li>
-                        <li><Link to="">Login</Link></li>
-                        <li><Link to="">Signup</Link></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/apartments">Apartments</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/login">Login</Link></li>
+                        <li><Link to="/ignup">Signup</Link></li>
                     </ul>
                 </div>
                 <div className="header-btn">Schedule a visit</div>
