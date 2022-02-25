@@ -1,0 +1,29 @@
+.login-area{
+    margin: 50px 120px;
+}
+.login-cover{
+    width: 60vh;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+.google-btn,
+.github-btn{
+    margin-top: 10px;
+    margin-right: 10px;
+    color: #CABE9F;
+    padding: 12px 15px;
+    border: 1px solid #CABE9F;
+    cursor: pointer;
+    background-color: #fff;
+    transition: .3s;
+    font-weight: bold;
+}
+.google-btn:hover,
+.github-btn:hover{
+    color: #000;
+    background-color: #CABE9F;
+}
+.signup-btn{
+    text-decoration: none;
+    color: #CABE9F;
+}

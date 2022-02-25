@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Apartments from './pages/Apartments';
 import Contact from './pages/Contact';
 import Homepage from './pages/Homepage';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -19,6 +20,12 @@ function App() {
         <Switch>
           <Route path="/contact"><Contact></Contact></Route>    
         </Switch>  
+        <Switch>
+          <Route path="/login"><Login></Login></Route>    
+        </Switch>
+        {/* <Switch>
+          <Route path="/register"><Contact></Contact></Route>    
+        </Switch> */}
       </BrowserRouter>  
       
     </div>

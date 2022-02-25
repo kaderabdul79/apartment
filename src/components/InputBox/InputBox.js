@@ -5,7 +5,6 @@ const InputBox = ({type,name,value,placeholder}) => {
     return (
         <div>
             <input className="allfield" type={type} name={name} value={value} placeholder={placeholder} id="" />
-            
         </div>
     );
 };
