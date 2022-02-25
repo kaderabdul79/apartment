@@ -1,0 +1,30 @@
+.wrapper-slider{
+    width: 100%;
+    height: 90vh;
+    /* background-color: red; */
+}
+img{
+    max-width: 100%;
+}
+.slider-btn{
+    color: #CABE9F;
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #CABE9F;
+    cursor: pointer;
+    background-color: #fff;
+    transition: .3s;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+.slider-btn a{
+    text-decoration: none;
+    color: #CABE9F;
+}
+.slider-btn a:hover{
+    color: #000;
+}
+.slider-btn:hover{
+    color: #000;
+    background-color: #CABE9F;
+}
