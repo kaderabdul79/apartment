@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import MyModal from '../MyModal/MyModal';
+import Modal from 'react-bootstrap/Modal'
 import './Header.css';
 
+
 const Header = () => {
+    const [modalShow, setModalShow] = useState(false);
+
     return (
         <div className='header-area'>
             {/* decdcd  <Button variant="primary">Primary</Button>{' '} */}
-            {/* <Container fluid> */}
             <div className="header">
                 <div className="logo">Apartment</div>
                 <div className="navbar">
@@ -19,9 +23,14 @@ const Header = () => {
                         <li><Link to="/register">Signup</Link></li>
                     </ul>
                 </div>
-                <div className="header-btn">Schedule a visit</div>
+                
+                <div className="header-btn" onClick={() => setModalShow(true)}>Schedule a visit</div>
+                
+                <MyModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                />
             </div>
-            {/* </Container> */}
         </div>
     );
 };
