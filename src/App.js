@@ -5,6 +5,7 @@ import Apartments from './pages/Apartments';
 import Contact from './pages/Contact';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -23,9 +24,9 @@ function App() {
         <Switch>
           <Route path="/login"><Login></Login></Route>    
         </Switch>
-        {/* <Switch>
-          <Route path="/register"><Contact></Contact></Route>    
-        </Switch> */}
+        <Switch>
+          <Route path="/register"><Register></Register></Route>    
+        </Switch>
       </BrowserRouter>  
       
     </div>

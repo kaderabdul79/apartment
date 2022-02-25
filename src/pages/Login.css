@@ -1,7 +1,9 @@
-.login-area{
+.login-area,
+.register-area{
     margin: 50px 120px;
 }
-.login-cover{
+.login-cover,
+.register-cover{
     width: 60vh;
     margin: 0 auto;
     padding: 10px 20px;
@@ -25,5 +27,8 @@
 }
 .signup-btn{
     text-decoration: none;
+    color: #CABE9F;
+}
+.signup-btn:hover{
     color: #CABE9F;
 }
