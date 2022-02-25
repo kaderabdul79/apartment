@@ -16,7 +16,7 @@
 .single-apartment:hover img{
     transform: scale(1.1);
 }
-.single-apartment::after{
+.single-apartment::before{
     content: "";
     position: absolute;
     top: 0;
@@ -36,9 +36,14 @@
     transform: translate(-50%,-50%);
     font-weight: bold;
 }
+.apartment-desc a{
+    text-decoration: none;
+    color: #fff;
+}
 .apartment-desc h3{
     font-size: 20px;
 }
 .apartment-desc span{
     color: #CABE9F;
+    /* font-size: 15px; */
 }

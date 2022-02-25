@@ -3,6 +3,7 @@ import './ApartmentsCard.css';
 import room1 from './ApartmentImage/room1.jpg';
 import room3 from './ApartmentImage/room3.jpg';
 import TopBanner from '../TopBanner/TopBanner';
+import { Link } from 'react-router-dom';
 
 const ApartmentsCard = () => {
     return (
@@ -16,39 +17,34 @@ const ApartmentsCard = () => {
                 {/* single-apartment start */}
                 <div className="single-apartment">
                     <img src={room1} alt="room" />
-                    <div className="apartment-desc">
+                    <Link to="/"><div className="apartment-desc">
                         <h3>studio apartments</h3>
                         <span>explore</span>
-                    </div>
+                    </div></Link>
                 </div>
-                {/* single-apartment end */}
-                {/* single-apartment start */}
                 <div className="single-apartment">
                     <img src={room1} alt="room" />
-                    <div className="apartment-desc">
+                    <Link to="/"><div className="apartment-desc">
                         <h3>studio apartments</h3>
                         <span>explore</span>
-                    </div>
+                    </div></Link>
                 </div>
-                {/* single-apartment end */}
-                {/* single-apartment start */}
                 <div className="single-apartment">
-                    <img src={room3} alt="room" />
-                    <div className="apartment-desc">
-                        <h3>studio apartments</h3>
-                        <span>explore</span>
-                    </div>
-                </div>
-                {/* single-apartment end */}
-                                {/* single-apartment start */}
-                                <div className="single-apartment">
                     <img src={room1} alt="room" />
-                    <div className="apartment-desc">
+                    <Link to="/"><div className="apartment-desc">
                         <h3>studio apartments</h3>
                         <span>explore</span>
-                    </div>
+                    </div></Link>
+                </div>
+                <div className="single-apartment">
+                    <img src={room1} alt="room" />
+                    <Link to="/"><div className="apartment-desc">
+                        <h3>studio apartments</h3>
+                        <span>explore</span>
+                    </div></Link>
                 </div>
                 {/* single-apartment end */}
+                
 
             </div>
             {/* all rooms grid end */}
