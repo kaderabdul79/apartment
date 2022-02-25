@@ -1,0 +1,25 @@
+.form-area{
+    margin: 50px 120px;
+}
+.form-title{
+    text-transform: uppercase;
+    color: #CABE9F;
+    text-align: center;
+    font-size: 40px;
+}
+.form-cover{
+    /* display: flex; */
+}
+input[type="submit"] {
+    color: #CABE9F;
+    padding: 12px 30px;
+    border: 1px solid #CABE9F;
+    cursor: pointer;
+    background-color: #fff;
+    transition: .3s;
+    font-weight: bold;
+}
+input[type="submit"]:hover{
+    color: #000;
+    background-color: #CABE9F;
+}

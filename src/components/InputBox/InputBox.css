@@ -1,0 +1,17 @@
+.allfield{
+    width: 350px;
+    height: 40px;
+    padding: 20px;
+    border: 1px solid #CABE9F;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+input[type=textarea]{
+       resize: none;
+}
+/* input[type=text]:focus {
+    border-radius: 0;
+    background-color: yellow;
+    border: 1px solid red;
+  } */
