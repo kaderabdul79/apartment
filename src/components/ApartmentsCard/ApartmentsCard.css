@@ -1,0 +1,26 @@
+.apartmentsCard{
+
+}
+.banner-area{
+    height: 40vh;
+    position: relative;
+}
+.banner-area img{
+    width: 100%;
+    height: 100%;
+    background-image: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.banner-title{
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.banner-title h2{
+    color: rgb(219, 213, 213);
+}
