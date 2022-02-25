@@ -7,9 +7,9 @@ import InputBox from '../InputBox/InputBox';
 
 const MyModal = (props) => {
     return (
-        <Modal
+        <Modal class="modal-dialog modal-dialog-centered"
           {...props}
-          size="lg"
+          // size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
