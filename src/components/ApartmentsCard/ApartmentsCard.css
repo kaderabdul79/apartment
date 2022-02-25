@@ -24,3 +24,47 @@
 .banner-title h2{
     color: rgb(219, 213, 213);
 }
+/* apartments-area start */
+.apartments-area{
+    margin: 50px 120px;
+    display: grid;
+    grid-template-columns: repeat(3,minmax(400px,1fr));
+    gap: 25px;
+}
+.single-apartment{
+    position: relative;
+    overflow: hidden;
+}
+.single-apartment img{
+    width: 100%;
+    transition: .7s;
+}
+.single-apartment:hover img{
+    transform: scale(1.1);
+}
+.single-apartment::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #5e0909;
+    opacity: .1;
+}
+.apartment-desc{
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+}
+.apartment-desc h3{
+    font-size: 20px;
+}
+.apartment-desc span{
+    color: #CABE9F;
+}
