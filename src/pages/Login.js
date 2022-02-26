@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap';
 const Login = () => {
 
   const [loginInfo,setLoginInfo] = useState({})
-  const {usingGoogleSignin,user,error,isLoading,userLogin} = useAuth()
+  const {usingGoogleSignin,user,error,isLoading,userLogin,usingGithubSignin} = useAuth()
 
   const history = useHistory()
   const location = useLocation()
@@ -22,11 +22,16 @@ const Login = () => {
     newloginInfo[field] = value;
     setLoginInfo(newloginInfo);
   }
-  
+
   // handle login button when user'll login using google
   const handleGoogleSignIn = () => {
     usingGoogleSignin(location, history)
   }
+  
+    // handle login button when user'll login using github
+    const handleGithubSignin = () => {
+      usingGithubSignin(location, history)
+    }
 
   const handleSigninForm = (e) => {
     // console.log(loginInfo);
@@ -47,9 +52,9 @@ const Login = () => {
             Have no Account ? <Link to="/register" className='signup-btn'>Signup Now</Link>
             <div className="provider">
                     <button className='google-btn' onClick={handleGoogleSignIn}>Login with Google</button>
-                    <button className='github-btn'>Login with Github</button>
+                    <button className='github-btn' onClick={handleGithubSignin}>Login with Github</button>
             </div>
-            {error ? <Button style={{margin: '15px 0px'}} className="bg-light border" variant="warning">{error.message}</Button> : <div></div>}
+            {error ? <Button style={{margin: '15px 0px',backgroundColor: 'yellow'}} className="" variant="warning">{error.message}</Button> : <div></div>}
             </div>
         </div>
     );

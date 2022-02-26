@@ -44,7 +44,7 @@ const Register = () => {
               {/* } */}
               {/* { !user ? isLoading : <div><Spinner animation="border" /></div>} */}
               {/* { user?.email && <div>User Created Successfully</div> } */}
-              {error ? <Button style={{margin: '15px 0px'}} className="bg-light border" variant="warning">{error.message}</Button> : <div></div>}
+              {error ? <Button style={{margin: '15px 0px',backgroundColor: 'yellow'}} className="" variant="warning">{error.message}</Button> : <div></div>}
             Already have Account ? <Link to="/login" className='signup-btn'>Login Now</Link>
             
             </div>

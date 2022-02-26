@@ -73,7 +73,26 @@ const useFirebase = () => {
 
     }
 
-     // observer check state change or not
+    //Authenticate Using Github Sign-In
+    const usingGithubSignin = (location,history) => {
+        setIsLoading(true)
+        signInWithPopup(auth, githubprovider)
+        .then((result) => {
+            const user = result.user;
+            setUser(user)
+            // console.log(user)
+            const destination = location.state?.from || ''
+            history.replace(destination)
+        }).catch((error) => {
+            setUser(error)
+            // console.log(email)
+        }).finally(() => {
+            setIsLoading(false)
+        });
+
+    }
+
+    // observer check state change or not
     useEffect(()=>{
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -82,6 +101,7 @@ const useFirebase = () => {
               // User is signed out
               setUser({})
             }
+            setIsLoading(false)
           });
           return () => unsubscribed;
     },[])
@@ -96,7 +116,7 @@ const useFirebase = () => {
     }
 
     return {
-        usingGoogleSignin,user,error,logOut,userRegistration,isLoading,userLogin
+        usingGoogleSignin,user,error,logOut,userRegistration,isLoading,userLogin,usingGithubSignin
     };
 };
 
