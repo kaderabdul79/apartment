@@ -49,7 +49,7 @@ const MyModal = (props) => {
 
   // 
     return (
-        <Modal class="modal-dialog modal-dialog-centered"
+        <Modal className="modal-dialog modal-dialog-centered"
           {...props}
           // size="lg"
           aria-labelledby="contained-modal-title-vcenter"
