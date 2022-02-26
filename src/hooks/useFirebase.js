@@ -6,10 +6,56 @@ initilizeFirebase();
 const useFirebase = () => {
     const [user,setUser] = useState({})
     const [error,setError] = useState('')
+    const [isLoading,setIsLoading] = useState(true)
+
 
     const auth = getAuth();
     const googleprovider = new GoogleAuthProvider();
     const githubprovider = new GithubAuthProvider();
+
+    //Create a password-based account register 
+    const userRegistration = (email, password, name, history) => {
+        setIsLoading(true)
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          setError('')
+        //   to show the name,email after user registered
+          const newUser = {email,displayName:name}
+          setUser(newUser)
+          
+        //   after registered url replace to home
+          history.replace('/')
+        })
+        .catch((error) => {
+        //   const errorMessage = error.message;
+            setError(error)
+            console.log(error.message)
+        })
+        .finally(() => {
+            setIsLoading(false)
+        });
+    }
+    
+    // Sign in a user with an email address and password
+    const userLogin = (email, password,location,history) => {
+        setIsLoading(true)
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const destination = location.state?.from || ''
+            history.replace(destination)
+          // Signed in 
+          const user = userCredential.user;
+          setUser(user)
+          setError('')
+        })
+        .catch((error) => {
+        //   const errorMessage = error.message;
+          setError(error)
+        })
+        .finally(() => {
+            setIsLoading(false)
+        });
+    }
 
     //Authenticate Using Google Sign-In
     const usingGoogleSignin = (location,history) => {
@@ -50,7 +96,7 @@ const useFirebase = () => {
     }
 
     return {
-        usingGoogleSignin,user,error,logOut
+        usingGoogleSignin,user,error,logOut,userRegistration,isLoading,userLogin
     };
 };
 
