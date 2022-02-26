@@ -34,7 +34,7 @@ function App() {
           <Route path="/register"><Register></Register></Route>    
         </Switch>
         <Switch>
-          <Route path="/dashboard"><Dashboard></Dashboard></Route>    
+          <PrivateRoute path="/dashboard"><Dashboard></Dashboard></PrivateRoute>    
         </Switch>
       </BrowserRouter>  
       
