@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AuthProvider from './context/AuthProvider';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* wrapup everything under authprovider */}
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
