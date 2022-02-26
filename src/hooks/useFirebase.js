@@ -12,12 +12,15 @@ const useFirebase = () => {
     const githubprovider = new GithubAuthProvider();
 
     //Authenticate Using Google Sign-In
-    const usingGoogleSignin = () => {
+    const usingGoogleSignin = (location,history) => {
         signInWithPopup(auth, googleprovider)
         .then((result) => {
             const user = result.user;
             setUser(user)
             // console.log(user)
+            // where user want to go? find it and redirect to there if came direct login rediret to homepage
+            const destination = location.state?.from || ''
+            history.replace(destination)
         }).catch((error) => {
             setError(error)
         });
