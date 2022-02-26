@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import MyModal from '../MyModal/MyModal';
 import Modal from 'react-bootstrap/Modal'
 import './Header.css';
+import useAuth from '../../hooks/useAuth';
 
 
 const Header = () => {
     const [modalShow, setModalShow] = useState(false);
+    const {user} = useAuth()
 
     return (
         <div className='header-area'>
@@ -20,7 +22,10 @@ const Header = () => {
                         <li><Link to="/apartments">Apartments</Link></li>
                         <li><Link to="/myapartments">one Apartments</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/login">Login</Link></li>
+                        {
+                            user.email ? <li><Link>Logout</Link></li>
+                            : <li><Link to="/login">Login</Link></li>
+                        }
                         <li><Link to="/register">Signup</Link></li>
                     </ul>
                 </div>
