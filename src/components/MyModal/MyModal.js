@@ -4,8 +4,11 @@ import './MyModal.css';
 import Modal from 'react-bootstrap/Modal'
 import { Link } from 'react-router-dom';
 import InputBox from '../InputBox/InputBox';
+import useAuth from '../../hooks/useAuth';
 
 const MyModal = (props) => {
+  // to show user name who are logined
+  const {user} = useAuth()
     return (
         <Modal class="modal-dialog modal-dialog-centered"
           {...props}
@@ -22,8 +25,8 @@ const MyModal = (props) => {
             {/* modal visit form start */}
             <div className="login-cover">
               <form className="login-form">
-                <InputBox type="text" name="name" placeholder="Your Name"></InputBox>
-                <InputBox type="email" name="email" placeholder="Your email"></InputBox>
+                <InputBox type="text" name="name" placeholder="Your Name" value={user.displayName}></InputBox>
+                <InputBox type="email" name="email" placeholder="Your email" value={user.email}></InputBox>
                 <InputBox type="text" name="phone" placeholder="Phone Number"></InputBox>
                 <InputBox type="textarea" name="message" placeholder="How can we Help You"></InputBox>
                 <input type="submit" value="Submit" />

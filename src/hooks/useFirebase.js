@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import initilizeFirebase from '../Firebase/firebase.init';
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 initilizeFirebase();
 const useFirebase = () => {
@@ -22,6 +22,12 @@ const useFirebase = () => {
         //   to show the name,email after user registered
           const newUser = {email,displayName:name}
           setUser(newUser)
+        // send name to firebase after creation
+            updateProfile(auth.currentUser, {
+                    displayName: name
+            }).then(() => {
+            }).catch((error) => {
+            });
           
         //   after registered url replace to home
           history.replace('/')
