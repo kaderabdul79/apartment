@@ -23,6 +23,9 @@ const Header = () => {
                         <li><Link to="/myapartments">one Apartments</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         {
+                            user?.email && <li><Link to="/dashboard">Dashboard</Link></li>
+                        }
+                        {
                             user.email ? <li><Link onClick={logOut}>Logout</Link></li>
                             : <li><Link to="/login">Login</Link></li>
                         }
