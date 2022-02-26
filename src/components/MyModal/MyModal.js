@@ -22,16 +22,32 @@ const MyModal = (props) => {
     setScheduleForVisit(newscheduleForVisit);
     // console.log(scheduleForVisit)
   }
-  // prefent default form reload
+  // 
   const handleScheduleForVisit = (e) => {
     const schedule = {
       ...scheduleForVisit,
       // which day user confirm us he'll visit
       confirmedToday: new Date().toLocaleDateString()
     }
-    console.log(schedule)
+    // console.log(schedule)
+      // send to the server if user submit schedule form
+  fetch('http://localhost:5000/schedules', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(schedule)
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.insertedId)
+  })
+
     e.preventDefault();
   }
+  // handleScheduleForVisit end
+
+  // 
     return (
         <Modal class="modal-dialog modal-dialog-centered"
           {...props}
