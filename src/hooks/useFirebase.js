@@ -22,24 +22,25 @@ const useFirebase = () => {
         //   to show the name,email after user registered
           const newUser = {email,displayName:name}
           setUser(newUser)
+        //   insert user info to mongo db
+        createUserAcc(email,name)
         // send name to firebase after creation
             updateProfile(auth.currentUser, {
                     displayName: name
             }).then(() => {
-            }).catch((error) => {
-            });
-          
-        //   after registered url replace to home
-          history.replace('/')
+        }).catch((error) => {
+    });
+    //   after registered url replace to home
+        history.replace('/')
         })
-        .catch((error) => {
-        //   const errorMessage = error.message;
-            setError(error)
-            console.log(error.message)
-        })
-        .finally(() => {
-            setIsLoading(false)
-        });
+    .catch((error) => {
+    //   const errorMessage = error.message;
+        setError(error)
+        console.log(error.message)
+    })
+    .finally(() => {
+        setIsLoading(false)
+    });
     }
     
     // Sign in a user with an email address and password
@@ -119,6 +120,22 @@ const useFirebase = () => {
           }).catch((error) => {
             setError(error.message)
     })
+    }
+
+    // 
+    const createUserAcc = (email,name) => {
+        const userData = {email,name}
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+          })
     }
 
     return {
