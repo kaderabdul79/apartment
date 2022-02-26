@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import SingleApartment from './pages/SingleApartment';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="/apartments"><Apartments></Apartments></Route>    
         </Switch>  
         <Switch>
-          <Route path="/myapartments"><SingleApartment></SingleApartment></Route>    
+          <PrivateRoute path="/myapartments"><SingleApartment></SingleApartment></PrivateRoute>    
         </Switch> 
         <Switch>
           <Route path="/contact"><Contact></Contact></Route>    
