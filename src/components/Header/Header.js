@@ -9,7 +9,7 @@ import useAuth from '../../hooks/useAuth';
 
 const Header = () => {
     const [modalShow, setModalShow] = useState(false);
-    const {user} = useAuth()
+    const {user,logOut} = useAuth()
 
     return (
         <div className='header-area'>
@@ -23,7 +23,7 @@ const Header = () => {
                         <li><Link to="/myapartments">one Apartments</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         {
-                            user.email ? <li><Link>Logout</Link></li>
+                            user.email ? <li><Link onClick={logOut}>Logout</Link></li>
                             : <li><Link to="/login">Login</Link></li>
                         }
                         <li><Link to="/register">Signup</Link></li>

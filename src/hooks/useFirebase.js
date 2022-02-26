@@ -24,9 +24,17 @@ const useFirebase = () => {
 
     }
 
+    // sign out user,
+    const logOut = () => {
+        signOut(auth).then(() => {
+            setUser({})
+          }).catch((error) => {
+            setError(error.message)
+    })
+    }
 
     return {
-        usingGoogleSignin,user,error
+        usingGoogleSignin,user,error,logOut
     };
 };
 
