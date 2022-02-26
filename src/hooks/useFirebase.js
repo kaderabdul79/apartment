@@ -22,8 +22,8 @@ const useFirebase = () => {
         //   to show the name,email after user registered
           const newUser = {email,displayName:name}
           setUser(newUser)
-        //   insert user info to mongo db
-        createUserAcc(email,name)
+        //   insert user info to mongo db and pass the method to reuse the function also for PUT Api
+        createUserAcc(email,name,'POST')
         // send name to firebase after creation
             updateProfile(auth.currentUser, {
                     displayName: name
@@ -71,6 +71,8 @@ const useFirebase = () => {
             const user = result.user;
             setUser(user)
             // console.log(user)
+            // 
+            createUserAcc(user.email,user.displayName,'PUT')
             // where user want to go? find it and redirect to there if came direct login rediret to homepage
             const destination = location.state?.from || ''
             history.replace(destination)
@@ -122,11 +124,11 @@ const useFirebase = () => {
     })
     }
 
-    // 
-    const createUserAcc = (email,name) => {
+    // now can reused this func. if method post pass then insert data and if user are new try to login then insert data if exists just he'll login
+    const createUserAcc = (email,name,method) => {
         const userData = {email,name}
         fetch('http://localhost:5000/users', {
-            method: 'POST',
+            method: method,
             headers: {
               'content-type': 'application/json'
             },
