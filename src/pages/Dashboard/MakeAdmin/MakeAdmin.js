@@ -4,6 +4,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 
 const MakeAdmin = () => {
     const [email,setEmail] = useState('');
+    const [successmsg,setSuccessmsg] = useState(false);
 
     const handleOnBlur = (e) => {
         // console.log(e.target.value)
@@ -21,7 +22,11 @@ const MakeAdmin = () => {
           })
           .then(res => res.json())
           .then(data => {
-            console.log(data)
+            if(data.modifiedCount){
+                // console.log(data)
+                setEmail('')
+                setSuccessmsg(true)
+            }
           })
         //   change form default behaviour
         e.preventDefault();
@@ -37,6 +42,7 @@ const MakeAdmin = () => {
                             {/* <Button type='submit' value="submit">submit</Button> */}
                             <input type='submit' value="submit" />
                         </form>
+                        { successmsg && <div>Successfully Made Admin</div> }
                     </Col>
                 </Row>
             </Container>
