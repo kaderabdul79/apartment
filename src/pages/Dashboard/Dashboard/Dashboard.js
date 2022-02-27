@@ -14,6 +14,7 @@ import Home from '../Home/Home';
 import AddApartment from '../AddApartment/AddApartment';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
+import AdminRoute from '../../../AdminRoute/AdminRoute';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -53,12 +54,12 @@ const Dashboard = () => {
                         <Route path={`${path}/isAdmin`}>
                             <Admin></Admin>
                         </Route>
-                        <Route path={`${path}/addApartment`}>
+                        <AdminRoute path={`${path}/addApartment`}>
                             <AddApartment></AddApartment>
-                        </Route>
-                        <Route path={`${path}/makeadmin`}>
+                        </AdminRoute>
+                        <AdminRoute path={`${path}/makeadmin`}>
                             <MakeAdmin></MakeAdmin>
-                        </Route>
+                        </AdminRoute>
                     </Switch>
             </div>
         </div>
