@@ -8,7 +8,7 @@ const Admin = () => {
             <Container>
                 <Row>
                     <Col lg="6">I'm admin</Col>
-                    <Col lg="6">add something.......</Col>
+                    <Col lg="6">show admin profile.......</Col>
                 </Row>
             </Container>
         </div>
