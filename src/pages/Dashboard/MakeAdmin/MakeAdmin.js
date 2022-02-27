@@ -3,14 +3,27 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 
 
 const MakeAdmin = () => {
-    const [makeAdmin,setMakeAdmin] = useState('');
+    const [email,setEmail] = useState('');
 
     const handleOnBlur = (e) => {
-        console.log(e.target.value)
-        setMakeAdmin(e.target.value);
+        // console.log(e.target.value)
+        setEmail(e.target.value);
       }
 
     const handleMakeAdminForm = (e) => {
+        const user = {email}
+        fetch('http://localhost:5000/users/admin', {
+            method: 'PUT',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+          })
+        //   change form default behaviour
         e.preventDefault();
     }
     return (
