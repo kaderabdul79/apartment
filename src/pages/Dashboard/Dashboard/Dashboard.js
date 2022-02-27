@@ -13,9 +13,12 @@ import Admin from '../Admin/Admin';
 import Home from '../Home/Home';
 import AddApartment from '../AddApartment/AddApartment';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import useAuth from '../../../hooks/useAuth';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
+    const {admin} = useAuth();
+
     return (
         <div className='dashboard-area'>
             {/*  */}
@@ -30,12 +33,15 @@ const Dashboard = () => {
                         <li>
                         <Link to={`${url}`}>Home</Link>
                         </li>
+                        { admin && <>
                         <li>
                         <Link to={`${url}/addApartment`}>AddApartment</Link>
                         </li>
                         <li>
                         <Link to={`${url}/makeadmin`}>Make Admin</Link>
                         </li>
+                        </>
+                        }
                     </ul>
                 </Row>
             </Container>

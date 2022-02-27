@@ -144,7 +144,7 @@ const useFirebase = () => {
     useEffect(()=>{
       fetch(`http://localhost:5000/users/${user.email}`)
       .then(res => res.json())
-      .then(data => setAdmin(data))
+      .then(data => setAdmin(data.admin))
     },[user.email])
     // I added dependency so that, if somehow email change so that can fetch data according to this email
 
