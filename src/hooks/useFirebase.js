@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import initilizeFirebase from '../Firebase/firebase.init';
-import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, getIdToken } from "firebase/auth";
 
 initilizeFirebase();
 const useFirebase = () => {
@@ -8,6 +8,7 @@ const useFirebase = () => {
     const [error,setError] = useState('')
     const [isLoading,setIsLoading] = useState(true)
     const [admin,setAdmin] = useState('false')
+    const [token,setToken] = useState('')
 
     const auth = getAuth();
     const googleprovider = new GoogleAuthProvider();
@@ -106,6 +107,11 @@ const useFirebase = () => {
         const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
               setUser(user)
+              // verifying using jwt token from here because observer will check what user doing
+              getIdToken(user)
+              .then(idToken => {
+                setToken(idToken)
+              } )
             } else {
               // User is signed out
               setUser({})
@@ -149,7 +155,7 @@ const useFirebase = () => {
     // I added dependency so that, if somehow email change so that can fetch data according to this email
 
     return {
-        usingGoogleSignin,user,error,logOut,userRegistration,isLoading,userLogin,usingGithubSignin,admin
+        usingGoogleSignin,user,error,logOut,userRegistration,isLoading,userLogin,usingGithubSignin,admin,token
     };
 };
 

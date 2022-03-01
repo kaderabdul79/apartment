@@ -5,11 +5,15 @@ import MyModal from '../MyModal/MyModal';
 import Modal from 'react-bootstrap/Modal'
 import './Header.css';
 import useAuth from '../../hooks/useAuth';
+import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 const Header = () => {
     const [modalShow, setModalShow] = useState(false);
     const {user,logOut} = useAuth()
+    // 
+    let history = useHistory();
 
     return (
         <div className='header-area'>
@@ -32,7 +36,8 @@ const Header = () => {
                     </ul>
                 </div>
                 
-                <div className="header-btn" onClick={() => setModalShow(true)}>Schedule a visit</div>
+                {/* <div className="header-btn" onClick={() => setModalShow(true)}>Schedule a visit</div> */}
+                <div className="header-btn" onClick={() => {user.email ? setModalShow(true) : history.push("/login")}}>Schedule a visit</div>
                 
                 <MyModal
                     show={modalShow}

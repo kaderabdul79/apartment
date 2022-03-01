@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 
 
 const MakeAdmin = () => {
     const [email,setEmail] = useState('');
     const [successmsg,setSuccessmsg] = useState(false);
+    const {token} = useAuth();
 
     const handleOnBlur = (e) => {
         // console.log(e.target.value)
@@ -16,6 +18,8 @@ const MakeAdmin = () => {
         fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
+              // Bearer means who are donig bear
+              'authorization' : `Bearer ${token}`,
               'content-type': 'application/json'
             },
             body: JSON.stringify(user)
