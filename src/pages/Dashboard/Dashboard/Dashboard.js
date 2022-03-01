@@ -30,14 +30,14 @@ const Dashboard = () => {
                     <Col lg="2" className='sidebar'>
                     <ul>
                         <li>
-                        <Link to={`${url}/isAdmin`}>Admin</Link>
+                        <Link to={`${url}`}>Schedule</Link>
                         </li>
                         <li>
-                        <Link to={`${url}`}>Home</Link>
+                        <Link to={`${url}/viewprofile`}>View Profile</Link>
                         </li>
                         { admin && <>
                         <li>
-                        <Link to={`${url}/addApartment`}>AddApartment</Link>
+                        <Link to={`${url}/addApartment`}>Add Apartment</Link>
                         </li>
                         <li>
                         <Link to={`${url}/makeadmin`}>Make Admin</Link>
@@ -53,7 +53,7 @@ const Dashboard = () => {
                         <Route exact path={path}>
                             <Home></Home>
                         </Route>
-                        <Route path={`${path}/isAdmin`}>
+                        <Route path={`${path}/viewprofile`}>
                             <Admin></Admin>
                         </Route>
                         <AdminRoute path={`${path}/addApartment`}>

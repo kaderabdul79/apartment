@@ -18,10 +18,13 @@ const AddApartment = () => {
             <Container>
                 <Row>
                     <Col lg="4">
-                        <h3>add new apartment</h3>
+                        <h3 style={{textTransform: 'capitalize'}}>add new apartment</h3>
                         <form className="login-form" onSubmit={handleApartmentForm}>
                         <InputBox eventListener={handleOnBlur} type="text" name="title" placeholder="Enter title"></InputBox>
                         <InputBox eventListener={handleOnBlur} type="textarea" name="description" placeholder="Write description"></InputBox>
+                        <InputBox eventListener={handleOnBlur} type="file" name="featureImg" placeholder="Upload featureImg"></InputBox>
+                        <InputBox eventListener={handleOnBlur} type="text" name="title" placeholder="Enter title"></InputBox>
+
                         <input type="submit" value="Add Apartment" />
                         </form>
                     </Col>
