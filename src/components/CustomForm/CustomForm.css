@@ -1,14 +1,19 @@
 .form-area{
-    margin: 50px 120px;
+    margin: 30px 120px;
 }
 .form-title{
     text-transform: uppercase;
     color: #CABE9F;
     text-align: center;
     font-size: 40px;
+    margin-bottom: 10px;
 }
-.form-cover{
+.left-side .allfield{
+    margin: 0 auto 20px;
+    display: block;
     /* display: flex; */
+    /* margin: 0 auto;
+    background-color: red; */
 }
 input[type="submit"] {
     color: #CABE9F;
@@ -18,6 +23,11 @@ input[type="submit"] {
     background-color: #fff;
     transition: .3s;
     font-weight: bold;
+
+}
+.left-side input[type="submit"] {
+    margin: 0px 465px 0px;
+    display: block;
 }
 input[type="submit"]:hover{
     color: #000;

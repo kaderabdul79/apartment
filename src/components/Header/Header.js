@@ -36,7 +36,7 @@ const Header = () => {
                     </ul>
                 </div>
                 
-                {/* <div className="header-btn" onClick={() => setModalShow(true)}>Schedule a visit</div> */}
+                {/*  if user not login can't take schedule and if click for to take schedule push to login*/}
                 <div className="header-btn" onClick={() => {user.email ? setModalShow(true) : history.push("/login")}}>Schedule a visit</div>
                 
                 <MyModal
