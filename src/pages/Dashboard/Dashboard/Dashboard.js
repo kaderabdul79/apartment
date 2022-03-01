@@ -15,6 +15,7 @@ import AddApartment from '../AddApartment/AddApartment';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../../AdminRoute/AdminRoute';
+import './Dashboard.css';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -22,11 +23,11 @@ const Dashboard = () => {
 
     return (
         <div className='dashboard-area'>
-            {/*  */}
             <div className="dashboard">
             <Container>
                 <Row>
-                    <h2>Dashboard</h2>
+                    {/* sidebar start here */}
+                    <Col lg="2" className='sidebar'>
                     <ul>
                         <li>
                         <Link to={`${url}/isAdmin`}>Admin</Link>
@@ -44,10 +45,11 @@ const Dashboard = () => {
                         </>
                         }
                     </ul>
-                </Row>
-            </Container>
-            {/*  */}
-            <Switch>
+                    </Col>
+                    {/* sidebar end here */}
+                    {/* all content will take space */}
+                    <Col lg="10">
+                    <Switch>
                         <Route exact path={path}>
                             <Home></Home>
                         </Route>
@@ -61,6 +63,10 @@ const Dashboard = () => {
                             <MakeAdmin></MakeAdmin>
                         </AdminRoute>
                     </Switch>
+                    </Col>
+                    {/* all content will take space */}
+                </Row>
+            </Container>
             </div>
         </div>
     );

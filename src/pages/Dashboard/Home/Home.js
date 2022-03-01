@@ -5,12 +5,12 @@ import Schedule from '../../../components/Schedule/Schedule';
 const Home = () => {
     return (
         <div>
-            <Container>
-                <Row>
-                    <Col lg="6"><Schedule></Schedule></Col>
-                    <Col lg="6"><Schedule></Schedule></Col>
-                </Row>
-            </Container>
+            {/* <Container>
+                <Row> */}
+                    <Col lg="12"><Schedule></Schedule></Col>
+                    {/* <Col lg="6"><Schedule></Schedule></Col> */}
+                {/* </Row>
+            </Container> */}
         </div>
     );
 };
