@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import OneApartment from '../components/OneApartment/OneApartment';
 
 const SingleApartment = () => {
+    const {id} = useParams()
+    const [apartment,setApartment] = useState({})
+    // load data from server
+    useEffect(()=>{
+        fetch(`http://localhost:5000/apartments/${id}`)
+        .then(res => res.json())
+        .then(data => setApartment(data))
+    },[])
     return (
         <div>
-            <OneApartment></OneApartment>
+            <OneApartment apartment={apartment}></OneApartment>
         </div>
     );
 };

@@ -6,14 +6,14 @@ import TopBanner from '../TopBanner/TopBanner';
 import { Link } from 'react-router-dom';
 
 const ApartmentsCard = (props) => {
-    // console.log(props.apartment)
-    const {title,image} = props.apartment
+    console.log(props.apartment)
+    const {title,image,_id} = props.apartment
     return (
         <div>
             <div className="single-apartment">
                     <img src={`data:image/png;base64,${image}`} alt="room" />
                     {/* <img src={room1} alt="room" /> */}
-                    <Link to="/"><div className="apartment-desc">
+                    <Link to={`/apartments/${_id}`}><div className="apartment-desc">
                         <h3>{title}</h3>
                         <span>explore</span>
                     </div></Link>

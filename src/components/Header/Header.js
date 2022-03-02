@@ -24,7 +24,6 @@ const Header = () => {
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/apartments">Apartments</Link></li>
-                        <li><Link to="/myapartments">one Apartments</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                         {
                             user?.email && <li><Link to="/dashboard">Dashboard</Link></li>

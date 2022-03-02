@@ -19,10 +19,10 @@ function App() {
           <Route exact path="/"><Homepage></Homepage></Route>    
         </Switch>  
         <Switch>
-          <Route path="/apartments"><Apartments></Apartments></Route>    
+          <Route exact path="/apartments"><Apartments></Apartments></Route>    
         </Switch>  
         <Switch>
-          <PrivateRoute path="/myapartments"><SingleApartment></SingleApartment></PrivateRoute>    
+          <PrivateRoute path="/apartments/:id"><SingleApartment></SingleApartment></PrivateRoute>    
         </Switch> 
         <Switch>
           <Route path="/contact"><Contact></Contact></Route>    
