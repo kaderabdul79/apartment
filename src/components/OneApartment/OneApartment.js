@@ -10,7 +10,8 @@ const OneApartment = ({apartment}) => {
             <TopBanner title="STUDIO APARTMENTS"></TopBanner>
             <div className="single-apartment-wrapper">
                 <div className="slider">
-                    <Slider></Slider>
+                    <img style={{width: '1000px',height: '540px',marginBottom: '10px'}} src={`data:image/png;base64,${apartment.image}`} alt="room" />
+                    {/* <Slider></Slider> */}
                 </div>
                 <div className="desc-1">
                     <h5>Introducing single apartment, the stunning new addition to the downtown Manhattan skyline. A perfect blend of breathtaking architecture designed, with awe-inspiring interiors envisioned</h5>
