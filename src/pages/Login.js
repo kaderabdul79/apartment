@@ -45,8 +45,8 @@ const Login = () => {
             {/*  */}
             <div className="login-cover">
               <form className="login-form" onSubmit={handleSigninForm}>
-                <InputBox eventListener={handleOnBlur} type="password" name="password" placeholder="Enter password"></InputBox>
                 <InputBox eventListener={handleOnBlur} type="email" name="email" placeholder="Your email"></InputBox>
+                <InputBox eventListener={handleOnBlur} type="password" name="password" placeholder="Enter password"></InputBox>
                 <input type="submit" value="Login" />
               </form>
             Have no Account ? <Link to="/register" className='signup-btn'>Signup Now</Link>

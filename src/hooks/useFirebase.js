@@ -146,7 +146,7 @@ const useFirebase = () => {
           })
     }
 
-    // 
+    // to check login user is admin or not. If not admin so that we can limit access
     useEffect(()=>{
       fetch(`http://localhost:5000/users/${user.email}`)
       .then(res => res.json())
