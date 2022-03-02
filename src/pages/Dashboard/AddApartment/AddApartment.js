@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import InputBox from '../../../components/InputBox/InputBox';
 
 
 const AddApartment = () => {
-    // const [apartmentInfo,setApartmentInfo] = useState({})
     const [title,setTitle] = useState('')
     const [description,setDescription] = useState('')
     const [subtextarea,setTsubtextarea] = useState('')
     const [image,setImage] = useState(null)
+
+    const [successmsg,setSuccessmsg] = useState(false);
 
     const handleApartmentForm = (e) => {
         e.preventDefault();
@@ -22,6 +22,11 @@ const AddApartment = () => {
         fetch('http://localhost:5000/apartments', {
             method: 'POST',
             body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            setSuccessmsg(true)
         })
     }
     // file field style
@@ -48,6 +53,7 @@ const AddApartment = () => {
 
                         <input type="submit" value="Add Apartment" />
                         </form>
+                        { successmsg && <div>Successfully Apartment Added</div> }
                     </Col>
                     <Col lg="8"></Col>
                 </Row>
