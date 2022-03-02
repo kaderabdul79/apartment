@@ -4,10 +4,15 @@ import room1 from './ApartmentImage/room1.jpg';
 import room3 from './ApartmentImage/room3.jpg';
 import TopBanner from '../TopBanner/TopBanner';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const ApartmentsCard = (props) => {
-    console.log(props.apartment)
+    // console.log(props.apartment)
     const {title,image,_id} = props.apartment
+    const {isLoading} = useAuth()
+    // if(isLoading){
+    //     return 'loading.........'
+    // }
     return (
         <div>
             <div className="single-apartment">

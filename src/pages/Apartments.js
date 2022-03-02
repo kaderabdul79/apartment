@@ -4,6 +4,7 @@ import { useState } from 'react';
 import '../components/ApartmentsCard/ApartmentsCard.css';
 import ApartmentsCard from '../components/ApartmentsCard/ApartmentsCard';
 import TopBanner from '../components/TopBanner/TopBanner';
+import { Spinner } from 'react-bootstrap';
 
 const Apartments = () => {
     const [apartments,setApartments] = useState([])
@@ -20,6 +21,11 @@ const Apartments = () => {
             {/* {apartments.length} */}
             <div className="apartments-area">
             {/* <div className="single-apartment"> */}
+            {/* show spinner if take time to show data */}
+            {
+                apartments.length === 0 ? <Spinner animation="border" /> : ''
+            }
+            {/* show spinner if take time to show data end */}
             {
                 apartments.map(apartment => <ApartmentsCard apartment={apartment}></ApartmentsCard>)
             }
