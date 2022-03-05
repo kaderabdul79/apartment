@@ -14,7 +14,11 @@ const Apartments = () => {
         .then(res => res.json())
         .then(data => setApartments(data))
     },[])
-
+    // to take spinnerCenter
+    const spinnerCenter = {
+        width: '1280px',
+        textAlign: 'center'
+    }
     return (
         <div className='apartmentsCard'>
             <TopBanner title="Apartments"></TopBanner>
@@ -23,7 +27,7 @@ const Apartments = () => {
             {/* <div className="single-apartment"> */}
             {/* show spinner if take time to show data */}
             {
-                apartments.length === 0 ? <Spinner animation="border" /> : ''
+                apartments.length === 0 ? <div style={spinnerCenter}><Spinner animation="border"/></div> : ''
             }
             {/* show spinner if take time to show data end */}
             {
