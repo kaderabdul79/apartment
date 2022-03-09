@@ -16,7 +16,7 @@ const MakeAdmin = () => {
 
     const handleMakeAdminForm = (e) => {
         const user = {email}
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://fierce-atoll-66877.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
               // Bearer means who are donig bear

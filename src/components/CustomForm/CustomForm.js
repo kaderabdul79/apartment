@@ -16,7 +16,7 @@ const CustomForm = () => {
     
     const handleContactForm = (e) => {
         // send info to server
-        fetch('http://localhost:5000/contacts', {
+        fetch('https://fierce-atoll-66877.herokuapp.com/contacts', {
             method: 'POST',
             headers: {
               'content-type': 'application/json'

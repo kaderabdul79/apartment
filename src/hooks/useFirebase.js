@@ -133,7 +133,7 @@ const useFirebase = () => {
     // now can reused this func. if method post pass then insert data and if user are new try to login then insert data if exists just he'll login
     const createUserAcc = (email,name,method) => {
         const userData = {email,name}
-        fetch('http://localhost:5000/users', {
+        fetch('https://fierce-atoll-66877.herokuapp.com/users', {
             method: method,
             headers: {
               'content-type': 'application/json'
@@ -148,7 +148,7 @@ const useFirebase = () => {
 
     // to check login user is admin or not. If not admin so that we can limit access
     useEffect(()=>{
-      fetch(`http://localhost:5000/users/${user.email}`)
+      fetch(`https://fierce-atoll-66877.herokuapp.com/users/${user.email}`)
       .then(res => res.json())
       .then(data => setAdmin(data.admin))
     },[user.email])

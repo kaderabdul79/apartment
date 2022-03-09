@@ -15,7 +15,7 @@ const ViewProfile = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/users/${id}`;
+            const url = `https://fierce-atoll-66877.herokuapp.com/users/${id}`;
             console.log(url)
             // fetch(url, {
             //     method: 'DELETE'

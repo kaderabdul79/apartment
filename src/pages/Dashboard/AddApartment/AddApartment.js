@@ -19,7 +19,7 @@ const AddApartment = () => {
         formData.append('subtextarea', subtextarea);
         formData.append('image', image);
         // send to server 
-        fetch('http://localhost:5000/apartments', {
+        fetch('https://fierce-atoll-66877.herokuapp.com/apartments', {
             method: 'POST',
             body: formData
         })

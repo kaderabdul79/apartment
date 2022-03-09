@@ -31,7 +31,7 @@ const MyModal = (props) => {
     }
     // console.log(schedule)
       // send to the server if user submit schedule form
-  fetch('http://localhost:5000/schedules', {
+  fetch('https://fierce-atoll-66877.herokuapp.com/schedules', {
     method: 'POST',
     headers: {
       'content-type': 'application/json'

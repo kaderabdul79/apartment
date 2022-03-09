@@ -9,7 +9,7 @@ const Schedule = () => {
     const [schedules,setSchedules] = useState([]);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/schedules?email=${user.email}`
+        const url = `https://fierce-atoll-66877.herokuapp.com/schedules?email=${user.email}`
         fetch(url)
         .then(res => res.json())
         .then(data => console.log(data))

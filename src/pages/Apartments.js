@@ -10,7 +10,7 @@ const Apartments = () => {
     const [apartments,setApartments] = useState([])
     // load data from server
     useEffect(()=>{
-        fetch('http://localhost:5000/apartments')
+        fetch('https://fierce-atoll-66877.herokuapp.com/apartments')
         .then(res => res.json())
         .then(data => setApartments(data))
     },[])
