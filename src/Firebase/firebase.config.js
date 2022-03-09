@@ -1,4 +1,4 @@
-console.log(process.env);
+// console.log(process.env);
 const firebaseConfig = {
     // apiKey: "AIzaSyDNBfvli62rbOmK_KRiz0B8FBRY-EuR34M",
     // authDomain: "apartment-c3fc1.firebaseapp.com",

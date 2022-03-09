@@ -16,6 +16,7 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../../AdminRoute/AdminRoute';
 import './Dashboard.css';
+import ViewProfile from '../ViewProfile/ViewProfile';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
@@ -54,7 +55,7 @@ const Dashboard = () => {
                             <Home></Home>
                         </Route>
                         <Route path={`${path}/viewprofile`}>
-                            <Admin></Admin>
+                            <ViewProfile></ViewProfile>
                         </Route>
                         <AdminRoute path={`${path}/addApartment`}>
                             <AddApartment></AddApartment>

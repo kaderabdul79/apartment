@@ -3,13 +3,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-.spinner-border{
-  display: inline-block;
-  width: 6rem;
-  height: 6rem;
-  vertical-align: -.125em;
-  border: .25em solid currentColor;
-  border-right-color: transparent;
-  border-radius: 50%;
-  animation: .75s linear infinite spinner-border;
-}

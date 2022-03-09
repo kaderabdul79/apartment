@@ -12,12 +12,12 @@ const Schedule = () => {
         const url = `http://localhost:5000/schedules?email=${user.email}`
         fetch(url)
         .then(res => res.json())
-        .then(data => setSchedules(data))
+        .then(data => console.log(data))
     },[])
 
     return (
         <div>
-            Schedule : {schedules.length}
+            <h2>You Took Schedule : {schedules.length}</h2>
             <div className="schedule-table">
                 <Table striped bordered hover>
                     <thead>
@@ -29,14 +29,14 @@ const Schedule = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {schedules.map((schedule,index) => {
+                        {schedules.map((schedule,index) => (
                             <tr>
-                            <td>{index}</td>
+                            <td>{index+1}</td>
                             <td>{schedule.name}</td>
                             <td>{schedule.email}</td>
                             <td>{schedule.confirmedToday}</td>
                             </tr>                            
-                        })}
+                        ))}
 
                     </tbody>
                 </Table>
